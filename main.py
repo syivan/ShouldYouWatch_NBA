@@ -1,13 +1,13 @@
 # First we will import our packages
-import pandas as pd
-import numpy as np
-from sklearn import linear_model
 import requests
 from nba_api.live.nba import endpoints
-from matplotlib import pyplot as plt
-
+import TeamInfo
 def verifyUserInput():
-    teamNames=['Hawks', 'Celtics', 'Nets', 'Hornets',]
+    while True:
+        teamToWatch = input("What Team to Watch\n")
+        if (teamToWatch in TeamInfo.TEAM_NAMES or TeamInfo.TEAM_ABBREVIATIONS):
+            print("Team Present in User Input")
+    return teamToWatch
 
 # Press the green button in the gutter to run the script.
 if __name__ == '__main__':
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     dataToday = endpoints.scoreboard.ScoreBoard().get_dict()
     # Our "data" variable now has built in functions such as creating a dataframe for our data
     gameData = dataToday.get('scoreboard').get('games')
-    teamToWatch = input("What Team to Watch\n")
+    teamToWatch = verifyUserInput()
     print(dataToday)
     for i in range(len(gameData)):
         if (gameData[i].get('homeTeam').get('teamName') == teamToWatch):

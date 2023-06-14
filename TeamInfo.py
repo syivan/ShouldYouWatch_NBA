@@ -1,4 +1,4 @@
-TEAMNAMES = ['hawks', 'celtics', 'nets', 'hornets', 'bulls', 'cavaliers',
+TEAM_NAMES = ['hawks', 'celtics', 'nets', 'hornets', 'bulls', 'cavaliers',
              'mavericks', 'nuggets', 'pistons', 'warriors', 'rockets',
              'pacers', 'clippers', 'lakers', 'grizzlies', 'heat', 'bucks',
              'timberwolves', 'pelicans', 'knicks', 'thunder', 'magic',
